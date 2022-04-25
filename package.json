@@ -1,0 +1,25 @@
+{
+  "name": "node-foo",
+  "version": "1.0.0",
+  "description": "testing node app with github actions and azure",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janesmae/node-foo"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "janesmae",
+  "type": "module",
+  "engines": {
+    "node": ">=16",
+    "yarn": "^1.22.4"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node -r dotenv/config src/index.js"
+  },
+  "dependencies": {
+    "cross-env": "7.0.3",
+    "dotenv": "10.0.0"
+  }
+}
