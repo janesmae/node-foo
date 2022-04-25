@@ -24,8 +24,11 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
-      - run: yarn set version 1.22.4
-      - run: yarn install
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+#      - run: yarn set version 1.22.4
+#      - run: yarn install
       - run: zip release.zip ./* -r
       - uses: actions/upload-artifact@v2
         with:
