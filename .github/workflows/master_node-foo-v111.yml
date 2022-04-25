@@ -9,20 +9,21 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  AZURE_WEBAPP_NAME: node-foo-v111
+  AZURE_WEBAPP_PACKAGE_PATH: '.'     
+  NODE_VERSION: '16.x'
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-      - run: npm install -g yarn
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16.x"
-          cache: yarn
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
       - run: yarn set version 1.22.4
       - run: yarn install
       - run: zip release.zip ./* -r
