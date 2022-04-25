@@ -20,15 +20,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'yarn'
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ env.NODE_VERSION }}
+#          cache: 'yarn'
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install
-#      - run: yarn set version 1.22.4
-#      - run: yarn install
+      - run: yarn set version 1.22.4
+      - run: yarn install
 #      - run: zip release.zip ./* -r
 #      - uses: actions/upload-artifact@v2
 #        with:
