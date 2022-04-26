@@ -12,7 +12,7 @@
   "type": "module",
   "engines": {
     "node": ">=16",
-    "yarn": "^1.22.4"
+    "yarn": "YARN NO LONGER USED - use npm instead."
   },
   "main": "src/index.js",
   "scripts": {
